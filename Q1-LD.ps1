@@ -17,7 +17,7 @@ $used = @( )
 Get-PSDrive -PSProvider FileSystem | ForEach-Object { $used += $_.Name }
 
 $available = @( )
-[int][char]"A"..[int][char]"Z" | ForEach-Object {
+[char]"A"..[char]"Z" | ForEach-Object {
         [string]$d = [string][char][int]$_
         if ( -not ( $used.Contains( "$d" ) ) ) {
                 $available += $d
